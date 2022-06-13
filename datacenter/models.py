@@ -13,6 +13,7 @@ class Passcard(models.Model):
         return f'{self.owner_name} (inactive)'
 
 
+
 class Visit(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     passcard = models.ForeignKey(Passcard, on_delete=models.CASCADE)
@@ -28,3 +29,4 @@ class Visit(models.Model):
                 if self.leaved_at else 'not leaved'
             )
         )
+
